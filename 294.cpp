@@ -1,46 +1,47 @@
-#include <cstdio>
 #include <cmath>
+#include <cstdio>
 
 using namespace std;
 
-int find (int x) {
-	int i, bound, cnt;
+int find(int x)
+{
+    int i, bound, cnt;
 
-	if (x == 1) return 1;
+    if (x == 1) return 1;
 
-	cnt = 2;
+    cnt = 2;
 
-	bound = (int)(sqrt((double)x) + 0.5);
+    bound = (int)(sqrt((double)x) + 0.5);
 
-	for (i = 2; i <= bound; ++i)
-		if (x % i == 0) cnt += 2;
+    for (i = 2; i <= bound; ++i)
+        if (x % i == 0) cnt += 2;
 
-	if (bound * bound == x)
-		cnt --;
+    if (bound * bound == x) cnt--;
 
-	return cnt;
+    return cnt;
 }
 
-int main (void) {
-	int times, i, beg, end, max, maxIndex, tmpInt;
+int main(void)
+{
+    int times, i, beg, end, max, maxIndex, tmpInt;
 
-	scanf("%d", &times);
+    scanf("%d", &times);
 
-	while (times-- > 0) {
-		scanf("%d %d", &beg, &end);
-	
-		maxIndex = beg;
-		max = find(beg);
-		for (i = beg + 1; i <= end; ++i) {
-			tmpInt = find(i);
-			if (tmpInt > max) {
-				max = tmpInt;
-				maxIndex = i;
-			}
-		}
+    while (times-- > 0) {
+        scanf("%d %d", &beg, &end);
 
-		printf("Between %d and %d, %d has a maximum of %d divisors.\n", beg, end, maxIndex, max);
-	}
+        maxIndex = beg;
+        max      = find(beg);
+        for (i = beg + 1; i <= end; ++i) {
+            tmpInt = find(i);
+            if (tmpInt > max) {
+                max      = tmpInt;
+                maxIndex = i;
+            }
+        }
 
-	return 0;
+        printf("Between %d and %d, %d has a maximum of %d divisors.\n", beg, end, maxIndex, max);
+    }
+
+    return 0;
 }

@@ -3,20 +3,22 @@
 
 using namespace std;
 
-int main(int argc, char const *argv[]){
-	int count, tmp, sum = 0;
-	string op;
+int main(int argc, char const *argv[])
+{
+    int    count, tmp, sum = 0;
+    string op;
 
-	cin >> count;
+    cin >> count;
 
-	for (int i = 0; i < count; ++i){
-		cin >> op;
-		if(op.compare("donate") == 0){
-			cin >> tmp;
-			sum += tmp;
-		}else
-			cout << sum << endl;
-	}
+    for (int i = 0; i < count; ++i) {
+        cin >> op;
+        if (op.compare("donate") == 0) {
+            cin >> tmp;
+            sum += tmp;
+        }
+        else
+            cout << sum << endl;
+    }
 
-	return 0;
+    return 0;
 }

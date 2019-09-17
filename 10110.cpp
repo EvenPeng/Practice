@@ -1,16 +1,19 @@
-#include <iostream>
 #include <cmath>
+#include <iostream>
 
 using namespace std;
 
-int main (void) {
-	long n, s;
+int main(void)
+{
+    long n, s;
 
-	while (cin >> n && n > 0) {
-		s = sqrt(n);
-		if (s * s == n) cout << "yes" << endl;
-		else cout << "no" << endl;
-	}
+    while (cin >> n && n > 0) {
+        s = sqrt(n);
+        if (s * s == n)
+            cout << "yes" << endl;
+        else
+            cout << "no" << endl;
+    }
 
-	return 0;
+    return 0;
 }

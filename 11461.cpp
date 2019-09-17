@@ -1,19 +1,20 @@
-#include <cstdio>
 #include <cmath>
+#include <cstdio>
 
 using namespace std;
 
-int main (void) {
-	int left, right;
+int main(void)
+{
+    int left, right;
 
-	while (scanf("%d %d", &left, &right) != EOF) {
-		if (left == 0 && right == 0) break;
-		
-		left = (int)sqrt((double)left - 1);
-		right = (int)sqrt((double)right);
+    while (scanf("%d %d", &left, &right) != EOF) {
+        if (left == 0 && right == 0) break;
 
-		printf("%d\n", right - left);
-	}
+        left  = (int)sqrt((double)left - 1);
+        right = (int)sqrt((double)right);
 
-	return 0;
+        printf("%d\n", right - left);
+    }
+
+    return 0;
 }

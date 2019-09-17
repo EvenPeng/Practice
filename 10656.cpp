@@ -3,33 +3,36 @@
 
 using namespace std;
 
-int main (void) {
-	bool first;
-	int i, n, tmp;
+int main(void)
+{
+    bool first;
+    int  i, n, tmp;
 
-	while (scanf("%d", &n) != EOF) {
-		if (!n) break;
+    while (scanf("%d", &n) != EOF) {
+        if (!n) break;
 
-		first = true;
-		for (i = 0; i < n; ++i) {
-			scanf("%d", &tmp);
-			if (tmp) {
-				printf("%d", tmp);
-				first = false;
+        first = true;
+        for (i = 0; i < n; ++i) {
+            scanf("%d", &tmp);
+            if (tmp) {
+                printf("%d", tmp);
+                first = false;
 
-				break;
-			}
-		}
+                break;
+            }
+        }
 
-		if (!first)
-			for (++i; i < n; ++i) {
-				scanf("%d", &tmp);
-				if (tmp) printf(" %d", tmp);
-			}
+        if (!first)
+            for (++i; i < n; ++i) {
+                scanf("%d", &tmp);
+                if (tmp) printf(" %d", tmp);
+            }
 
-		if (first) printf("0\n");
-		else printf("\n");
-	}
+        if (first)
+            printf("0\n");
+        else
+            printf("\n");
+    }
 
-	return 0;
+    return 0;
 }

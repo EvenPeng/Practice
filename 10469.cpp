@@ -2,10 +2,12 @@
 
 using namespace std;
 
-int main (void) {
-	unsigned int a, b;
-	
-	while (cin >> a >> b) cout << (a^b) << endl;
+int main(void)
+{
+    unsigned int a, b;
 
-	return 0;
+    while (cin >> a >> b)
+        cout << (a ^ b) << endl;
+
+    return 0;
 }

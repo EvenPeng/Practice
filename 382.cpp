@@ -1,46 +1,55 @@
-#include <iostream>
-#include <cstdlib>
-#include <cstdio>
 #include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <iostream>
 
 using namespace std;
 
-int check (int num) {
-	if (num == 1) return 0;
+int check(int num)
+{
+    if (num == 1) return 0;
 
-	int sum = 1;
-	int dividor = 1;
-	int bound = sqrt(num);
+    int sum     = 1;
+    int dividor = 1;
+    int bound   = sqrt(num);
 
-	while (++dividor <= bound) {
-		if (num % dividor == 0)
-			sum += dividor + num / dividor;
-	}
+    while (++dividor <= bound) {
+        if (num % dividor == 0) sum += dividor + num / dividor;
+    }
 
-	if (sum < num) return 0;
-	else if (sum == num) return 1;
-	else return 2;
+    if (sum < num)
+        return 0;
+    else if (sum == num)
+        return 1;
+    else
+        return 2;
 }
 
-int main (int argc, char *argv[]) {
-	int num;
+int main(int argc, char *argv[])
+{
+    int num;
 
-	cout << "PERFECTION OUTPUT" << endl;
+    cout << "PERFECTION OUTPUT" << endl;
 
-	while (true) {
-		cin >> num;
-		if (num == 0) break;
+    while (true) {
+        cin >> num;
+        if (num == 0) break;
 
-		printf("%5d  ", num);
+        printf("%5d  ", num);
 
-		switch (check(num)) {
-		case 0: printf("DEFICIENT\n"); break;
-		case 1: printf("PERFECT\n"); break;
-		default : printf("ABUNDANT\n");
-		}
-	}
+        switch (check(num)) {
+        case 0:
+            printf("DEFICIENT\n");
+            break;
+        case 1:
+            printf("PERFECT\n");
+            break;
+        default:
+            printf("ABUNDANT\n");
+        }
+    }
 
-	cout << "END OF OUTPUT" << endl;
+    cout << "END OF OUTPUT" << endl;
 
-	return 0;
+    return 0;
 }

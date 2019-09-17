@@ -3,15 +3,16 @@
 
 using namespace std;
 
-int main (void) {
-	int times, a, b, pay;
+int main(void)
+{
+    int times, a, b, pay;
 
-	scanf("%d", &times);
+    scanf("%d", &times);
 
-	while (times--) {
-		scanf("%d %d %d", &a, &b, &pay);
-		printf("%d\n", (2 * a - b) * pay / (a + b));
-	}
+    while (times--) {
+        scanf("%d %d %d", &a, &b, &pay);
+        printf("%d\n", (2 * a - b) * pay / (a + b));
+    }
 
-	return 0;
+    return 0;
 }
