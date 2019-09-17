@@ -48,7 +48,7 @@ int main(void)
             }
         }
 
-        m = 0;
+        m = 1;
         for (i = 1; i <= lenL; ++i)
             m = cnt[i] > m ? cnt[i] : m;
         printf("%d\n", m);
