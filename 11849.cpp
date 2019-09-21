@@ -6,7 +6,7 @@ using namespace std;
 
 int main(void)
 {
-    int n, m, cnt, x;
+    int         n, m, cnt, x;
     vector<int> ll(1000000);
 
     while (1) {
