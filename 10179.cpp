@@ -35,35 +35,31 @@ void explore(int x)
 
 int main(void)
 {
-    int n, cnt;
+    int n, cnt, sq, frac;
+
+    explore(31623);
 
     while (1) {
         scanf("%d", &n);
         if (!n) break;
 
-        int p = 0;
-        if (seen < n) {
-            explore(n);
-            if (prime.back() != n) p = int(prime.size()) - 1;
-        }
-        else {
-            p = int(lower_bound(prime.begin(), prime.end(), n) - prime.begin());
-        }
+        sq   = sqrt(n);
+        cnt  = n;
+        frac = n;
+        for (int i = 0; i < int(prime.size()) && prime[i] <= sq; ++i)
+            if (n % prime[i] == 0) {
+                cnt = (cnt / prime[i]) * (prime[i] - 1);
+                while (frac > 1 && frac % prime[i] == 0) 
+                    frac /= prime[i];
+            }
+        if (frac > 1) cnt = cnt / frac * (frac - 1);
 
-        if (!p || prime[p] == n)
-            printf("%d\n", n - 1);
-        else {
-            vector<int> comb;
-            int         i = 0, sq = sqrt(n);
-            for (; prime[i] <= sq; ++i)
-                if (n % prime[i]) comb.push_back(prime[i]);
-            for (; i < p; ++i)
-                comb.push_back(prime[i]);
-            printf("%d\n", comb.size());
-            for (int i = 0; i < 3; ++i)
-                printf("%d ", comb[i]);
-            printf("\n");
-        }
+        if (n == 1)
+            printf("1\n");
+        else if (cnt == n)
+            printf("%d\n", cnt - 1);
+        else
+            printf("%d\n", cnt);
     }
 
     return 0;
