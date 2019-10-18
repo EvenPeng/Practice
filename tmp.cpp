@@ -1,6 +1,3 @@
-#include <cstdio>
-#include <cstring>
-
-using namespace std;
+#include <iostream>
 
 int main(void) { return 0; }
