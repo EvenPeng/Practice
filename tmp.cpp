@@ -1,3 +1,8 @@
 #include <iostream>
 
-int main(void) { return 0; }
+int main(void)
+{
+    std::ios::sync_with_stdio(false);
+
+    return 0;
+}
